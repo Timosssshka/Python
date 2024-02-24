@@ -1,0 +1,14 @@
+def uporyad(n):
+    s = n.split()
+    for i in range(1, len(s)):
+        word = s[i]
+        j = i - 1
+        while j >= 0 and len(s[j]) > len(word):
+            s[j + 1] = s[j]
+            j -= 1
+        s[j + 1] = word
+
+    sorted_sentence = ' '.join(s)
+    return sorted_sentence
+n = input("Введите строку: ")
+print(uporyad(n))
